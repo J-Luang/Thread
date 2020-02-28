@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Enemy
+  - Boundary
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -44,6 +48,12 @@ TagManager:
   - name: Background
     uniqueID: 735793587
     locked: 0
+  - name: Entitiy
+    uniqueID: 1415024241
+    locked: 0
   - name: Forground
     uniqueID: 4252798375
+    locked: 0
+  - name: TestPlatform
+    uniqueID: 643892043
     locked: 0
