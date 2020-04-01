@@ -36,9 +36,8 @@ public class Slime : MonoBehaviour
         slimeJumpSound.Play();
     }
 
-    private void Update()
+    private void EnemyMovement()
     {
-        CheckRoatation();
         if (facingLeft)
         {
             if (transform.position.x > leftWayPoint)
@@ -59,7 +58,7 @@ public class Slime : MonoBehaviour
                 facingLeft = false;
             }
         }
-        
+
         else
         {
             if (transform.position.x < rightWayPoint)
@@ -79,5 +78,11 @@ public class Slime : MonoBehaviour
                 facingLeft = true;
             }
         }
+    }
+
+    private void Update()
+    {
+        CheckRoatation();
+        EnemyMovement();
     }
 }

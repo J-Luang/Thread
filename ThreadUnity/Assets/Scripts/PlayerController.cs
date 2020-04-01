@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask ground;
     [SerializeField] private int CharacterSpeed = 6;
-    [SerializeField] private float hurtForce = 6f;
+    [SerializeField] private float hurtforcex = 6f;
+    [SerializeField] private float hurtforcey = 6f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private float health;
     [SerializeField] private Text healthAmount;
@@ -128,11 +129,16 @@ public class PlayerController : MonoBehaviour
                 HandleHealth();
                 if (other.gameObject.transform.position.x > transform.position.x)
                 {
-                    rb2D.velocity = new Vector2(-hurtForce, rb2D.velocity.y);
+                    rb2D.velocity = new Vector2(-hurtforcex, hurtforcey);
                 }
                 else
                 {
-                    rb2D.velocity = new Vector2(hurtForce, rb2D.velocity.y);
+                    rb2D.velocity = new Vector2(hurtforcex, hurtforcey);
+                }
+
+                if(other.gameObject.transform.position.y <= transform.position.y)
+                {
+                    rb2D.velocity = new Vector2(hurtforcex, hurtforcey + 2);
                 }
             }
         }
